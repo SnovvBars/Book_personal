@@ -2,8 +2,9 @@ import UI
 
 def button_click():
     item = UI.main_menu()
-    if item == 1:
-        item = UI.data_input()
+    # print(type(item))
+    # if item == 1:
+        # item = UI.data_input()
     # r_txt.write_txt(item)
     # elif item == 2:
     #     item = data_print.data_fam()
@@ -15,6 +16,7 @@ def button_click():
     #     item = rem.data_delete()    
     # elif item == 6:
     #     item = rem.del_all()    
-    elif item == 7:
+    if item == 6:
+        # print(item)
         print("\n Good bye!!!\n")
         exit()
