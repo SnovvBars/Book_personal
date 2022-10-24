@@ -2,6 +2,7 @@
 from datetime import datetime as dt
 import check_input
 from os import system
+from os import path
 
 def main_menu():
     choice_main_menu = int(check_input.check_taken('''
@@ -13,7 +14,6 @@ def main_menu():
  4 Найти данные                 
  5 Очистить БД               
  6 Выход
-
  Ваш выбор (1 - 6): ''', "\n Ошибка!\n", 1, 6))
     return choice_main_menu
 
@@ -23,19 +23,21 @@ def main_menu():
 # например, если пропущено id = 3, возвращаем 3, если id непрерывны, то возвращаем
 # id + 1
 def unique_id():
-    with open('t_book.txt', 'a+', encoding="utf-8") as fp:
-        max = 0
-        list_id = []
-        for n, line in enumerate(fp, 1):
-            dic = dict(subString.split(":") for subString in line.replace('\n', '').split(", "))
-            list_id.append(int(dic["id"]))
-            if int(dic["id"]) > max: max = int(dic["id"])
-    fp.close()
-    for i in range(1, len(list_id) + 1):
-        if i not in list_id:
-            return(i)
-            # break
-    return (len(list_id) + 1)    
+    if path.exists('t_book.txt'):
+        with open('t_book.txt', 'r', encoding="utf-8") as fp:
+            max = 0
+            list_id = []
+            for n, line in enumerate(fp, 1):
+                dic = dict(subString.split(":") for subString in line.replace('\n', '').split(", "))
+                list_id.append(int(dic["id"]))
+                if int(dic["id"]) > max: max = int(dic["id"])
+        fp.close()
+        for i in range(1, len(list_id) + 1):
+            if i not in list_id:
+                return(i)
+                # break
+        return (len(list_id) + 1)
+    else: return 1    
 
 def data_input():
     print('\n Будем вводить данные сотрудника')
@@ -112,7 +114,6 @@ def find_str_del():
 def show_filds():
     list_filds = input('''
  Выберите для дополнительного показа (перечислите через пробел):
-
  1. Должность
  2. Отдел
  3. Оклад
@@ -125,5 +126,3 @@ def show_filds():
  
  ''').split()
     return list_filds
-
-    
