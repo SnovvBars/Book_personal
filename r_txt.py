@@ -1,4 +1,5 @@
 import r_html
+from os import system
 
 # Заменяем цифры нв значения, записываем в файл txt, на его основе генерим html
 def write_txt(dic):
@@ -11,3 +12,5 @@ def write_txt(dic):
             .format(', '.join('{}: {}'.format(key, val) for key, val in dic.items())))
     file.close()
     r_html.save_html()
+    print("\n Сделано\n")
+    system("pause")

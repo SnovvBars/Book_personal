@@ -1,13 +1,14 @@
 # Пункты меню главного и для ввода данных
 from datetime import datetime as dt
 import check_input
+from os import system
 
 def main_menu():
     choice_main_menu = int(check_input.check_taken('''
    Выберите действие:
     
- 1 Ввести данные по сотруднику         
- 2 Редактировать данные
+ 1 Ввести нового сотрудника         
+ 2 Удалить (уволить) струдника
  3 Вывести данные по сотрудникам                   
  4 Найти данные                 
  5 Очистить БД               
@@ -85,5 +86,47 @@ def finding_status(status):
     if status == 1: return 'Женат\\Замужем'
     elif status == 2: return 'Холост'
     else: return 'В разводе'
+
+# Сначала ищем абонента по фамилии, показываем совпадения, предлагаем выбрать ID удаляемого
+def find_str_del():
+    elem = str(input('''
+     Кого будем удалять?
+     Введите часть фамилии или фамилию целиком: '''))
+    print ('')
+    count = 0
+    if elem == '' : print(" Не найдено!")
+    else:
+        with open('t_book.txt', 'r', encoding="utf-8") as fp:
+            for n, line in enumerate(fp, 1):
+                dic = dict(subString.split(":") for subString in line.replace('\n', '').split(", "))
+                if elem.lower() in dic['famaly'].lower():
+                    count += 1
+                    print("{}. | id: {}, | ФИО:{:>16} | Должность:{:>18} | Отдел.:{:>9}"
+                        .format(count, dic['id'], dic['famaly'], dic['job_title'], dic['department'], dic['gender'], dic['status']))                                    
+        fp.close()
+        if count == 0 :
+            print(" Не найдено!\n")
+            system("pause")
+            return False
+        else:
+            nun_del = input('\n Выберите id удаляемого: ')
+            return nun_del
+
+def show_filds():
+    list_filds = input('''
+ Выберите для дополнительного показа (перечислите через пробел):
+
+ 1. Должность
+ 2. Отдел
+ 3. Оклад
+ 4. Телефон
+ 5. Статус телефона
+ 6. Возраст
+ 7. Пол
+ 8. Соцстатус
+ 9. Дата приема   
+ 
+ ''')
+    return list_filds
 
     
