@@ -8,31 +8,29 @@ def main_menu():
    Выберите действие:
     
  1 Ввести нового сотрудника         
- 2 Удалить (уволить) струдника
+ 2 Удалить (уволить) сотрудника
  3 Вывести данные по сотрудникам                   
  4 Найти данные                 
  5 Очистить БД               
  6 Выход
 
  Ваш выбор (1 - 6): ''', "\n Ошибка!\n", 1, 6))
-    # print(choice_main_menu)
-    # if choice_main_menu == 1: data_input()
     return choice_main_menu
 
+# Поиск уникального ID. Перебираем значения ключей ID сотрудников, записываем в list_id
+# находим максимальное значение, в цикле перебираем числа от 1 до max_id + 1, если 
+# какое то значение пропущено, возвращаем его, если нет, возвращаем id + 1,
+# например, если пропущено id = 3, возвращаем 3, если id непрерывны, то возвращаем
+# id + 1
 def unique_id():
-    # str_html = '<html><body><table border = 1><tr><td>ID</td><td>ФИО</td><td>Должность</td><td>Отдел</td><td>Оклад</td><td>Телефон</td><td>Статус номера</td><td>Возраст</td><td>Пол</td><td>Соцстатус</td><td>Принят</td></tr><tr>'
     with open('t_book.txt', 'a+', encoding="utf-8") as fp:
         max = 0
         list_id = []
         for n, line in enumerate(fp, 1):
             dic = dict(subString.split(":") for subString in line.replace('\n', '').split(", "))
-            # str_html = str_html + form_line(dic)
-    # str_html = str_html + '</tr></table></body></html>'
             list_id.append(int(dic["id"]))
             if int(dic["id"]) > max: max = int(dic["id"])
-            # print(dic["id"], max, list_id)
     fp.close()
-    # print(list_id)
     for i in range(1, len(list_id) + 1):
         if i not in list_id:
             return(i)

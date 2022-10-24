@@ -10,5 +10,4 @@ def check_taken(text_invitation, error, min, max):             # Проверк�
             print(error)
             system("pause")
         else:
-            # print(input_data)
             return input_data
