@@ -1,9 +1,0 @@
-id: 3, famaly: Сидоров А. Н., job_title: папп, department: апапап, salary: ар, telephone: арр, own: Личный, age: 1, gender: м, status: Женат\Замужем
-id: 4, famaly: Васильев А. В., job_title: сичси, department: ичч, salary: ичсичс, telephone: ич, own: Личный, age: 1, gender: м, status: Женат\Замужем
-id: 8, famaly: Федоров П. П., job_title: gftyfhv, department: ,jbkgku, salary: hvjy, telephone: uhhkjc, own: Личный, age: 1, gender: м, status: Женат\Замужем, data_appointment: 12
-id: 9, famaly: Кусина Ж. А., job_title: jhvhjv, department: khkk, salary: khg, telephone: kjgig, own: Рабочий, age: 2, gender: ж, status: Холост, data_appointment: 2231
-id: 10, famaly: Водкин Л. В., job_title: ugugk, department: hbukuh, salary: khbk, telephone: huou, own: Домашний, age: 32, gender: ж, status: Женат\Замужем, data_appointment: 224
-id: 7, famaly: Терешкова П. О., job_title: rewre, department: ewfwef, salary: fr4wr, telephone: 3434, own: Личный, age: 2, gender: ж, status: Холост, data_appointment: 2
-id: 11, famaly: Гагарин Ю. А., job_title: fdsfsdf, department: sdfsdf, salary: efesf, telephone: fdsf, own: Личный, age: 1, gender: м, status: Женат\Замужем, data_appointment: 12
-id: 1, famaly: Коровина А. П., job_title: Директор, department: НЛП, salary: 52 000, telephone: 34256, own: Личный, age: 42, gender: ж, status: В разводе, data_appointment: 4314
-id: 1, famaly: Моисей И. Д., job_title: Святой, department: Египет, salary: 15 000, telephone: 343253, own: Рабочий, age: 100, gender: м, status: Холост, data_appointment: 4353

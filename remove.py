@@ -23,3 +23,18 @@ def del_person(num):
     r_html.save_html()
     print(" Сделано!\n")
     os.system("pause")
+
+    # очистка БД телефонов
+def del_all():
+    if os.path.isfile('t_book.tmp'):
+        os.remove('t_book.tmp')
+    if input('\n Вы уверены? Откат будет невозможен!!! (y/n): ') == 'y':
+        if os.path.isfile('t_book.txt'):
+            os.remove('t_book.txt')
+        else: print("File doesn't exists!")
+        
+        f = open("t_book.txt", 'w', encoding="utf-8")
+        f.close()
+        r_html.save_html()
+        print(" Сделано!\n")
+        os.system("pause")
