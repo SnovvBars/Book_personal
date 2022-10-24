@@ -39,7 +39,6 @@ def unique_id():
             # break
     return (len(list_id) + 1)    
 
-
 def data_input():
     print('\n Будем вводить данные сотрудника')
     d = {'id' : unique_id()}   
@@ -126,7 +125,7 @@ def show_filds():
  8. Соцстатус
  9. Дата приема   
  
- ''')
+ ''').split()
     return list_filds
 
     

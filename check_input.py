@@ -4,7 +4,7 @@ def check_taken(text_invitation, error, min, max):             # Проверк�
     while True:
         input_data = input(text_invitation)
         if not input_data.isnumeric():
-            print("Вы ввели не число. Попробуйте снова: ")
+            print("\nВы ввели не число. Попробуйте снова: ")
             system("pause")
         elif not min <= int(input_data) <= max:
             print(error)

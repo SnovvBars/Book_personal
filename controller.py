@@ -1,6 +1,7 @@
 import UI
 import r_txt
 import remove
+import print_data
 
 def button_click():
     item = UI.main_menu()
@@ -13,7 +14,8 @@ def button_click():
         if item: remove.del_person(item)
     elif item == 3:
         item = UI.show_filds()
-        print(item)
+        # print(item)
+        print_data.print_select(item)
     # elif item == 4:
     #     item = search.data_search()    
     # elif item == 5:
