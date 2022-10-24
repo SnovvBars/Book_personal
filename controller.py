@@ -1,13 +1,14 @@
 import UI
+import r_txt
 
 def button_click():
     item = UI.main_menu()
     # print(type(item))
-    # if item == 1:
-        # item = UI.data_input()
-    # r_txt.write_txt(item)
+    if item == 1:
+        item = UI.data_input()
+        r_txt.write_txt(item)
     # elif item == 2:
-    #     item = data_print.data_fam()
+    #     UI.unique_id()
     # elif item == 3:
     #     item = data_print.data_all()
     # elif item == 4:
